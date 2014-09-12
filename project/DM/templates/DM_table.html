@@ -1,0 +1,76 @@
+<!-- /project/DM/templates/DM_table.html -->
+
+{% extends "template.html" %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="page-header">
+      <a class="btn btn-success pull-right" href="">Create a new Detection Mechanism</a>
+      <h1>Detection Mechanisms</h1>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+<div class="row">
+  <div class="col-sm-3 col-md-2 sidebar">
+    <ul class="nav nav-sidebar">
+      <li><a href="#">Overview</a></li>
+    </ul>
+    <ul class="nav nav-sidebar">
+      <li><a href="">Detection Objective Research</a></li>
+    </ul>
+    <ul class="nav nav-sidebar">
+      <li><a href="">Detection Objectives</a></li>
+      <li class="active"><a href="">Detection Mechanisms</a></li>
+      <li><a href="">Collection Plans</a></li>
+      <li><a href="">Detection Strategies</a></li>
+    </ul>
+  </div>
+</div>
+
+    <div class="row">
+  </div>
+<div class="entries">
+  <br>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>DO Name</th>
+        <th>Due Date</th>
+        <th>Posted Date</th>
+        <th>Priority</th>
+        <th>Posted By</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for DM in Created_DM %}
+      <tr>
+        <td>{{ DM.DM_Vendor }}</td>
+        <td>{{ DM.DM_Product }}</td>
+        <td>{{ DM.DM_Email }}</td>
+        <td>{{ DM.Description }}</td>
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+</div>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+  $('table').dataTable({
+    "aaSorting": [[ 3, "desc" ]],
+    "iDisplayStart": 50,
+    "aLengthMenu": [[50, 100, -1], [50, 100, 'All']],
+    'bPaginate':false
+  });
+});
+
+</script>
+
+{% endblock %}

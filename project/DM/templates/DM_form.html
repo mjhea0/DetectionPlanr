@@ -1,0 +1,55 @@
+<!-- /project/DM/templates/DM_form.html -->
+
+{% extends "template.html" %}
+
+{% block content %}
+
+
+
+ <div class="lead">Create a new Detection Detection Mechanism:</div>
+      <form action="{{ url_for('DM.new_DM') }}" method="post">
+        {{ form.csrf_token }}
+        <p>
+        {{ form.DM_Vendor(placeholder="DM_Vendor") }}
+        <span class="error">
+          {% if form.DM_Vendor.errors %}
+            {% for error in form.DM_Vendor.errors %}
+              {{ error }}
+            {% endfor %}
+          {% endif %}
+        </span>
+        </p>
+        <p>
+        {{ form.DM_Product(placeholder="DM_Product") }}
+        <span class="error">
+          {% if form.DM_Product.errors %}
+            {% for error in form.DM_Product.errors %}
+              {{ error }}
+            {% endfor %}
+          {% endif %}
+        </p>
+        </span>
+        <p>
+        {{ form.DM_Email(placeholder="DM_Email") }}
+        <span class="error">
+          {% if form.DM_Email.errors %}
+            {% for error in form.Email.errors %}
+              {{ error }}
+            {% endfor %}
+          {% endif %}
+        </p>
+        </span>
+        <p>
+        {{ form.DM_Description(placeholder="DM_Description") }}
+        <span class="error">
+          {% if form.DM_Description.errors %}
+            {% for error in form.DM_Description.errors %}
+              {{ error }}
+            {% endfor %}
+          {% endif %}
+        </span>
+        </p>
+        <br>
+      </form>
+
+{% endblock %}

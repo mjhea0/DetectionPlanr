@@ -1,0 +1,6 @@
+test*
+/migrations
+error.log
+*.pyc
+/project/OLD_CODE_SNIPPETS.txt
+
