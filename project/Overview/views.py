@@ -1,8 +1,6 @@
 # /project/Overview/views.py
 
-from flask import flash, redirect, render_template, request, \
-    session, url_for, Blueprint
-from project import db
+from flask import render_template, session, Blueprint
 from project.views import login_required
 
 
@@ -25,7 +23,4 @@ Overview_blueprint = Blueprint(
 @Overview_blueprint.route('/Overview/')
 @login_required
 def Overview():
-    return render_template(
-                           'Overview.html',
-                           username=session['name']
-                           )
+    return render_template('Overview.html', username=session['name'])

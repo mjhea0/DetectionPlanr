@@ -63,7 +63,8 @@ def login():
                 session['role'] = user.role
                 session['name'] = user.name
                 flash('You are logged in.')
-                return redirect(url_for('Overview.Overview'))
+
+                return redirect(url_for('OverView.Overview'))
         else:
             return render_template(
                 "login.html",
